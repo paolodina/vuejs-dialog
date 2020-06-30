@@ -1,5 +1,5 @@
 <template>
-    <button v-if="enabled" :class="['dg-btn', 'dg-btn--ok', {'dg-btn--loading': loading}, {'dg-pull-right': !options.reverse}]"
+    <button v-if="enabled" :class="['btn', options.btnClsOk, {'dg-btn--loading': loading}, {'dg-pull-right': !options.reverse}]"
             @click.prevent="proceed()" ref="btn" :disabled="is_disabled">
         <span class="dg-btn-content">
             <slot></slot>
@@ -20,6 +20,7 @@
             }
         },
         props: {
+            btnClsOk: '',
             enabled: {
                 required: false,
                 type: Boolean,

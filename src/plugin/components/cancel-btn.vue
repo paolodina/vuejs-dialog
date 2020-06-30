@@ -1,5 +1,5 @@
 <template>
-    <button v-if="enabled" :class="['dg-btn', 'dg-btn--cancel', {'dg-pull-right': options.reverse}]"
+    <button v-if="enabled" :class="['btn', options.btnClsCancel, {'dg-pull-right': options.reverse}]"
             @click.prevent="$emit('click')" ref="btn">
         <slot></slot>
     </button>
@@ -8,6 +8,7 @@
 <script>
     export default {
         props: {
+            btnClsCancel: '',
             enabled: {
                 required: false,
                 type: Boolean,
